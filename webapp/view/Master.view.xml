@@ -1,0 +1,45 @@
+<mvc:View
+	controllerName="com.sfc.routing.controller.Master"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="dynamicPageId">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="{i18n>masterTitle}"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<!-- DynamicPage Content -->
+		<f:content>
+			<VBox fitContainer="true">
+          <List 
+            noDataText="{i18n>noDataText}" 
+            id="masterList" 
+            items="{/BusinessPartnerSet}" 
+            width="auto" 
+            class="sapFDynamicPageAlignContent" 
+            growing="true" 
+            growingScrollToLoad="true"
+          >
+              <items>
+                <StandardListItem 
+                  type="Navigation" 
+                  press=".onSelectionChange"
+                  icon="{
+                    path: 'Address/Country',
+                    formatter: '.formatter.countryImg' 
+                  }" 
+                  id="item0" 
+                  title="{CompanyName}" 
+                  description="{WebAddress}" 
+                  info="{Address/City}" 
+                />
+            </items>
+          </List>  
+        </VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

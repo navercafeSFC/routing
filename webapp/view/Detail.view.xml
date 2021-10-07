@@ -1,0 +1,81 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.uxap" 
+xmlns:m="sap.m" 
+xmlns:layout="sap.ui.layout"
+xmlns:forms="sap.ui.layout.form"
+controllerName="com.sfc.routing.controller.Detail" height="100%">
+    <ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+    <headerTitle>
+        <ObjectPageHeader   id="headerForTest" 
+                            objectTitle="{i18n>objectTitle}" 
+                            objectImageURI="{
+                                path: 'Address/Country',
+                                formatter: '.formatter.countryImg'                               
+                            }"
+                            isObjectIconAlwaysVisible="true"                                   
+                            objectImageShape="Circle" 
+                            objectSubtitle="{BusinessPartnerID}" 
+                            showPlaceholder="true">
+            <navigationBar>
+                <m:Bar>
+                    <m:contentLeft>
+                        <m:Button icon="sap-icon://nav-back" tooltip="{i18n>navBack}" press=".onNavBack"/>
+                    </m:contentLeft>
+                </m:Bar>
+            </navigationBar>
+        </ObjectPageHeader>
+    </headerTitle>
+    <headerContent>
+        <layout:VerticalLayout>
+            <m:ObjectStatus title="{i18n>companyName}" text="{CompanyName}"/>
+            <m:ObjectStatus title="{i18n>phoneNumber}" text="{PhoneNumber}"/>
+            <m:ObjectStatus title="{i18n>emailAddress}" text="{EmailAddress}"/>
+            <m:ObjectStatus title="{i18n>webAddress}" text="{WebAddress}"/>                    
+        </layout:VerticalLayout> 
+    </headerContent> 
+    <sections>
+        <ObjectPageSection titleUppercase="false" title="{i18n>address}">
+            <subSections>
+                <ObjectPageSubSection>
+                    <blocks>
+                        <forms:SimpleForm
+                                maxContainerCols="2"
+                                layout="ResponsiveGridLayout"
+                                editable="false">
+                            <m:Label text="{i18n>city}"/>
+                            <m:Text text="{Address/City}"/>
+                            <m:Label text="{i18n>postalCode}"/>
+                            <m:Text text="{Address/PostalCode}"/>
+                            <m:Label text="{i18n>street}"/>
+                            <m:Text text="{Address/Street}"/>        
+                            <m:Label text="{i18n>building}"/>
+                            <m:Text text="{Address/Building}"/>    
+                            <m:Label text="{i18n>country}"/>
+                            <m:Text text="{Address/Country}"/>    
+                            <m:Label text="{i18n>building}"/>
+                            <m:Text text="{Address/Building}"/>    
+                            <m:Label text="{i18n>addressType}"/>
+                            <m:Text text="{AddressType/AddressType}"/>        
+                        </forms:SimpleForm>
+                    </blocks>
+                </ObjectPageSubSection>
+            </subSections>
+        </ObjectPageSection>
+
+        <ObjectPageSection titleUppercase="false" title="Section 1">
+            <subSections>
+                <ObjectPageSubSection title="Subsection 1.1" titleUppercase="false">
+                    <blocks>
+                        <m:Label text="Subsection 1.1 Content"/>
+                    </blocks>
+                </ObjectPageSubSection>
+                <ObjectPageSubSection title="Subsection 1.2" titleUppercase="false">
+                    <blocks>
+                        <m:Label text="Subsection 1.2 content"/>
+                    </blocks>
+                </ObjectPageSubSection>
+            </subSections>    
+        </ObjectPageSection>          
+    </sections>    
+    </ObjectPageLayout>
+</mvc:View>

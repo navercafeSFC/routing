@@ -1,0 +1,15 @@
+<mvc:View
+	controllerName="com.sfc.routing.controller.NotFound"
+	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<MessagePage showHeader="false"
+				 text="{i18n>notFoundTitle}"
+				 enableFormattedText="true"
+				 description="{i18n>notFoundText}"
+				 icon="sap-icon://message-warning">
+		<buttons>
+			<Button text="{i18n>gohome}" press=".onNavBack"/>
+		</buttons>
+	</MessagePage>
+</mvc:View>
